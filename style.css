@@ -33,6 +33,33 @@ header#hero {
   width: 120px;
   margin-bottom: 1rem;
 }
+/* --- Hero Redesign --- */
+.hero-center {
+  text-align: center;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.hero-logo {
+  width: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #F9B73F;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.hero-subtext {
+  max-width: 750px;
+  margin: 1.5rem auto 0;
+  font-size: 1rem;
+  color: #F9F3D9;
+  line-height: 1.8;
+}
 nav .logo {
   height: 40px;
   width: auto;
