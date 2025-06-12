@@ -62,6 +62,18 @@ header#hero {
   color: #F9F3D9;
   line-height: 1.8;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(17, 64, 54, 0.8); /* dark green with 80% opacity */
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(4px); /* optional: adds a subtle blur behind */
+  -webkit-backdrop-filter: blur(4px);
+}
 nav .logo {
   height: 40px;
   width: auto;
