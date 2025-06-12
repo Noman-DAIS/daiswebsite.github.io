@@ -18,3 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     appearOnScroll.observe(fader);
   });
 });
+
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  if (window.scrollY > 20) {
+    navbar.style.backgroundColor = "#114036"; // solid after scroll
+  } else {
+    navbar.style.backgroundColor = "transparent"; // transparent at top
+  }
+});
