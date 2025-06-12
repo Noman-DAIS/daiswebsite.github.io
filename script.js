@@ -27,3 +27,7 @@ window.addEventListener("scroll", () => {
     navbar.style.backgroundColor = "transparent"; // transparent at top
   }
 });
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("hidden");
+}
