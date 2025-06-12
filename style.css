@@ -68,6 +68,34 @@ nav .logo {
   object-fit: contain;
   padding: 4px 0;
 }
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.topnav .logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #F9F3D9;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
 .tagline {
   font-size: 1.2rem;
   margin: 1rem 0;
