@@ -33,6 +33,11 @@ header#hero {
   width: 120px;
   margin-bottom: 1rem;
 }
+nav .logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
 .tagline {
   font-size: 1.2rem;
   margin: 1rem 0;
