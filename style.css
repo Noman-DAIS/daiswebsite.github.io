@@ -66,13 +66,13 @@ header#hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #114036;
+  background-color: transparent; /* default */
   padding: 1rem 2rem;
   position: fixed;
   width: 100%;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
-
 .nav-left, .nav-right {
   display: flex;
   gap: 2rem;
@@ -184,3 +184,47 @@ footer {
     font-size: 1rem;
   }
 }
+@media (max-width: 768px) {
+  .nav-left, .nav-right {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    left: 1.2rem;
+    top: 1.2rem;
+    font-size: 2rem;
+    color: #F9F3D9;
+    cursor: pointer;
+  }
+  .nav-center {
+    justify-content: center;
+    flex: 1;
+  }
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #114036;
+    width: 220px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-left: 1rem;
+    gap: 1.5rem;
+    z-index: 999;
+  }
+  .mobile-menu a {
+    color: #F9F3D9;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  .hidden {
+    display: none;
+  }
+}
+.mobile-menu-toggle {
+  display: none;
+}
+
