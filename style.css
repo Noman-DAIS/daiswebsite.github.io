@@ -41,8 +41,10 @@ header#hero {
 }
 
 .hero-logo {
-  width: 60px;
-  margin-bottom: 1.5rem;
+  width: 36px;
+  height: auto;
+  margin-bottom: 1rem;
+  object-fit: contain;
 }
 
 .hero-title {
