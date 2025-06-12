@@ -27,11 +27,21 @@
   </div>
 </nav>
 
+<!-- Hamburger button and Mobile Menu -->
+<div class="mobile-menu-toggle" onclick="toggleMenu()">☰</div>
+<div id="mobileMenu" class="mobile-menu hidden">
+  <a href="#hero">Home</a>
+  <a href="#features">Solutions</a>
+  <a href="#about">About Us</a>
+  <a href="#contact">Contact</a>
+  <a href="#login">Log In</a>
+  <a href="#signup">Sign Up</a>
+</div>
 
 <!-- Hero Section -->
 <header id="hero" class="fade-in">
   <div class="container hero-center">
-    <h1 class="hero-title">D.A.I.S.</h1>
+    <h1 class="hero-title">DAIS</h1>
     <h2 class="tagline">Your A.I. Solution</h2>
     <p class="hero-subtext">
       We simplify AI integration for businesses of all sizes, providing comprehensive training and support to enable smooth adoption. 
@@ -98,6 +108,15 @@
       });
     }, appearOptions);
     faders.forEach(fader => appearOnScroll.observe(fader));
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+// Make navbar transparent on scroll
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.style.backgroundColor = window.scrollY > 50 ? "#114036" : "transparent";
+});
   </script>
 
 </body>
