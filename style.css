@@ -66,19 +66,37 @@ header#hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(17, 64, 54, 0.8); /* dark green with 80% opacity */
+  background-color: #114036;
   padding: 1rem 2rem;
   position: fixed;
   width: 100%;
   z-index: 1000;
-  backdrop-filter: blur(4px); /* optional: adds a subtle blur behind */
-  -webkit-backdrop-filter: blur(4px);
 }
-nav .logo {
-  height: 40px;
+
+.nav-left, .nav-right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.navbar a {
+  color: #F9F3D9;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navbar .logo {
+  height: 36px;
   width: auto;
   object-fit: contain;
-  padding: 4px 0;
 }
 .topnav {
   display: flex;
