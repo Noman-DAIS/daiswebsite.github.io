@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deployable AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav style="position: fixed; top: 0; width: 100%; background: rgba(0,0,0,0.8); padding: 1rem 2rem; z-index: 1000; display: flex; justify-content: space-between; align-items: center;">
+    <img src="logo.png" alt="Deployable AI Logo" class="logo" style="height: 40px;">
+    <div style="display: flex; gap: 2rem;">
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="fade-in" style="padding-top: 8rem;">
+    <div class="container">
+      <img src="logo.png" alt="Deployable AI Logo" class="logo">
+      <h1>Deploy Smarter, Not Harder</h1>
+      <p class="tagline">AI Deployment Tools for Real-World Impact</p>
+      <a href="#features" class="cta">Explore Features</a>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="cards">
+        <div class="card fade-in">
+          <h3>Instant Deployment</h3>
+          <p>Push to production in seconds with zero DevOps friction.</p>
+        </div>
+        <div class="card fade-in">
+          <h3>Secure & Scalable</h3>
+          <p>Encrypted by default, built to scale with your product.</p>
+        </div>
+        <div class="card fade-in">
+          <h3>Performance Optimized</h3>
+          <p>Lightweight, fast-loading, and globally distributed.</p>
+        </div>
+        <div class="card fade-in">
+          <h3>LLM Integrated</h3>
+          <p>Built-in support for modern AI models with simple APIs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Deployable AI</h2>
+      <p>We provide seamless infrastructure for deploying, monitoring, and scaling AI models in production. Our tools remove complexity so teams can focus on innovation.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>Interested in early access or partnerships? Email us at <a href="mailto:hello@deployableai.ae">hello@deployableai.ae</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Deployable AI. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade-in effect on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
+</body>
+</html>
