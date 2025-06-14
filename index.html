@@ -1,64 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Deployable AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
 
   <!-- Navbar -->
-<nav class="navbar">
-  <div class="nav-left">
-    <a href="#hero">Home</a>
-    <a href="#features">Solutions</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="mobile-menu-toggle" onclick="toggleMenu()">
-  </div>
-  <div class="nav-center">
-    <a href="#hero"><img src="logo.png" alt="DAIS Logo" class="logo" /></a>
-  </div>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="#hero">Home</a>
+      <a href="#features">Solutions</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-  <div class="nav-right">
-    <a href="#login">Log In</a>
-    <a href="#signup">Sign Up</a>
-  </div>
-</nav>
-  
-<div id="mobileMenu" class="mobile-menu hidden">
-  <a href="#hero">Home</a>
-  <a href="#features">Solutions</a>
-  <a href="#about">About Us</a>
-  <a href="#contact">Contact</a>
-  <a href="#login">Log In</a>
-  <a href="#signup">Sign Up</a>
-</div>
+    <div class="nav-center">
+      <a href="#hero"><img src="logo.png" alt="DAIS Logo" class="logo" /></a>
+    </div>
 
-<!-- Hamburger button and Mobile Menu -->
-<div class="mobile-menu-toggle" onclick="toggleMenu()">☰</div>
-<div id="mobileMenu" class="mobile-menu hidden">
-  <a href="#hero">Home</a>
-  <a href="#features">Solutions</a>
-  <a href="#about">About Us</a>
-  <a href="#contact">Contact</a>
-  <a href="#login">Log In</a>
-  <a href="#signup">Sign Up</a>
-</div>
+    <div class="nav-right">
+      <a href="#login">Log In</a>
+      <a href="#signup">Sign Up</a>
+    </div>
+  </nav>
 
-<!-- Hero Section -->
-<header id="hero" class="fade-in">
-  <div class="container hero-center">
-    <h1 class="hero-title">DAIS</h1>
-    <h2 class="tagline">Your A.I. Solution</h2>
-    <p class="hero-subtext">
-      We simplify AI integration for businesses of all sizes, providing comprehensive training and support to enable smooth adoption. 
-      We address high outsourcing costs, skill, and technology gap by offering an affordable, high-quality alternative.
-    </p>
-  </div>
-</header>
+  <!-- Hero Section -->
+  <header id="hero" class="fade-in">
+    <div class="container hero-center">
+      <h1 class="hero-title">DAIS</h1>
+      <h2 class="tagline">Your A.I. Solution</h2>
+      <p class="hero-subtext">
+        We simplify AI integration for businesses of all sizes, providing comprehensive training and support to enable smooth adoption. 
+        We address high outsourcing costs, skill, and technology gap by offering an affordable, high-quality alternative.
+      </p>
+    </div>
+  </header>
 
   <!-- Features Section -->
   <section id="features">
@@ -106,16 +85,30 @@
     <p>&copy; 2025 Deployable AI. All rights reserved.</p>
   </footer>
 
-<script>
-  window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 20) {
-      navbar.style.backgroundColor = "transparent";
-    } else {
-      navbar.style.backgroundColor = "#114036";
-    }
-  });
-</script>
+  <!-- JS for animations + navbar scroll -->
+  <script>
+    // Fade-in effect on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Solid to transparent navbar scroll behavior
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 20) {
+        navbar.style.backgroundColor = "transparent";
+      } else {
+        navbar.style.backgroundColor = "#114036";
+      }
+    });
+  </script>
 
 </body>
 </html>
