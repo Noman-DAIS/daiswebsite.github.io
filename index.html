@@ -106,28 +106,16 @@
     <p>&copy; 2025 Deployable AI. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Fade-in effect on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-    faders.forEach(fader => appearOnScroll.observe(fader));
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('hidden');
-    }
-
-// Make navbar transparent on scroll
+<script>
   window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
-    navbar.style.backgroundColor = window.scrollY > 50 ? "#114036" : "transparent";
+    if (window.scrollY > 20) {
+      navbar.style.backgroundColor = "transparent";
+    } else {
+      navbar.style.backgroundColor = "#114036";
+    }
   });
-  </script>
+</script>
 
 </body>
 </html>
