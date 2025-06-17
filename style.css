@@ -37,7 +37,8 @@ a {
   transform: translate(-50%, -50%);
 }
 .logo {
-  height: 36px;
+  height: 48px;
+  max-width: 120px;
 }
 .hamburger {
   background: none;
