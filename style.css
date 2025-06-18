@@ -271,3 +271,78 @@ footer .social-icons img {
   }
 }
 
+.zen-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #191919;
+  min-height: 80vh;
+  text-align: center;
+  position: relative;
+}
+
+.zen-container {
+  max-width: 640px;
+  padding: 2rem;
+}
+
+.zen-heading {
+  font-size: 3rem;
+  color: #F9B73F;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+
+.zen-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #F9B73F;
+  color: #191919;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.zen-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.zen-icon {
+  font-size: 1.4rem;
+}
+
+/* Optional radial background pattern */
+.zen-contact::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  height: 240px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, rgba(22, 175, 142, 0.15), transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+.zen-container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .zen-heading {
+    font-size: 2.2rem;
+  }
+  .zen-button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+
