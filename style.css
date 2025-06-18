@@ -566,17 +566,30 @@ footer .social-icons img {
 
 .cta-icon {
   font-size: 1.2rem;
-}
 .contact-cta-row {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.cta-box {
+.cta-container {
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 1rem;
+  border-radius: 16px;
   flex: 1;
-  min-width: 150px;
+  min-width: 180px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.cta-container:hover {
+  transform: translateY(-2px);
+}
+
+.cta-box {
   background-color: #16AF8E;
   color: #191919;
   font-weight: 600;
@@ -588,27 +601,25 @@ footer .social-icons img {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-.cta-box:hover {
-  background-color: #149b7d;
-  transform: translateY(-2px);
+.cta-container.whatsapp .cta-box {
+  background-color: #25D366;
+}
+
+.cta-container.whatsapp .cta-box:hover {
+  background-color: #1DA851;
 }
 
 .cta-icon {
   font-size: 1.2rem;
 }
 
-/* WhatsApp-specific color (optional) */
-.cta-box.whatsapp {
-  background-color: #25D366;
-  color: #191919;
+@media (max-width: 600px) {
+  .contact-cta-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
-
-.cta-box.whatsapp:hover {
-  background-color: #1DA851;
-}
-
-
