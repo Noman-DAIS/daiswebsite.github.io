@@ -214,3 +214,60 @@ footer .social-icons img {
   opacity: 1;
   transform: translateY(0);
 }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact-intro {
+  padding-right: 2rem;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none;
+  color: #F9F3D9;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  background: rgba(22, 175, 142, 0.1);
+}
+
+.contact-card .icon {
+  font-size: 2rem;
+  color: #16AF8E;
+}
+
+.contact-card .text h4 {
+  margin: 0;
+  color: #F9B73F;
+  font-size: 1.2rem;
+}
+
+.contact-card .text p {
+  margin: 0;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
