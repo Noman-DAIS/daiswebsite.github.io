@@ -20,28 +20,41 @@ a {
 /* === Preloader === */
 #preloader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #191919; /* Matches your site’s theme */
+  inset: 0;
+  background-color: #191919;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10000;
 }
 
+.preloader-glow {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(249,183,63,0.3) 0%, rgba(249,183,63,0.05) 80%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
 .preloader-logo {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   animation: spinLogo 2s linear infinite;
-  opacity: 0.9;
 }
 
 @keyframes spinLogo {
-  0% { transform: rotate(0deg); }
+  0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.08); opacity: 0.7; }
+}
+
 
 /* === Navbar === */
 .navbar {
@@ -393,13 +406,4 @@ footer .social-icons img {
     flex: 1 1 100%;
     max-width: 100%;
   }
-}
-.bg-blob {
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  opacity: 0.08;
-  z-index: 0;
-}
+
