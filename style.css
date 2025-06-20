@@ -152,19 +152,31 @@ section {
 
 /* === Hero === */
 .hero-title {
+  position: relative;
   font-size: 10rem;
-  font-weight: bold;
+  font-weight: 800;
+  color: #F9B73F; /* Your base gold */
+  display: inline-block;
+  z-index: 1;
 }
 
-/* === Leather Text Overlay === */
-.leather-text {
-  background: url('large-leather.png') center/cover no-repeat;
+.hero-title::after {
+  content: 'D A I S'; /* Must exactly match text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('fake-luxury.png') repeat;
+  background-size: 100px 100px;
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: transparent;
-  text-shadow: 0 0 20px rgba(249, 183, 63, 0.2); /* optional for glow */
+  -webkit-text-fill-color: transparent;
+  z-index: 2;
+  pointer-events: none;
 }
+
 
 .hero-center {
   text-align: center;
