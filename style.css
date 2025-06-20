@@ -57,7 +57,7 @@ a {
   50%      { transform: scale(1.08); opacity: 0.7; }
 }
 
-.text-overlay {
+..hero-title.text-overlay {
   font-size: 10rem;
   font-weight: 800;
   color: transparent;
