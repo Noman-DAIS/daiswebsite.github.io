@@ -16,3 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeIns.forEach(el => observer.observe(el));
 });
+
+let lastScroll = 0;
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll <= 0) {
+    navbar.style.top = '0';
+    return;
+  }
+
+  if (currentScroll > lastScroll) {
+    navbar.style.top = '-100px'; // hide navbar
+  } else {
+    navbar.style.top = '0'; // show navbar
+  }
+
+  lastScroll = currentScroll;
+});
