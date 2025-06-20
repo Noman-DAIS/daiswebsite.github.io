@@ -81,6 +81,17 @@ a {
     padding: 0.5rem 0;
     text-align: left;
   }
+  .navbar.active .nav-center {
+  display: none;
+  }
+  
+  .navbar.active .nav-left, 
+  .navbar.active .nav-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
 }
 
 /* === Page Layout === */
