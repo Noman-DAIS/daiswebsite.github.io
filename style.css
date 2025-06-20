@@ -184,6 +184,15 @@ section {
   gap: 3rem 2rem;
 }
 
+.grid-3x2 img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background-color: #111; /* optional: to fill any empty space around images */
+  border-radius: 12px;
+  padding: 0.5rem; /* optional: for visual balance */
+}
+
 .solution-item {
   display: flex;
   gap: 1.5rem;
