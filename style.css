@@ -217,16 +217,20 @@ section {
 }
 
 .solution-icon {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
   background-color: #16AF8E;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  color: #191919;
+  padding: 8px;
+}
+
+.solution-icon img.svg-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .solution-text h4 {
