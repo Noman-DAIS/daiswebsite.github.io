@@ -244,11 +244,28 @@ section {
   line-height: 1.5;
 }
 
+.team-member {
+  text-align: center;
+}
+
 .team-photo {
   width: 100%;
   height: 320px;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.team-name {
+  color: #16AF8E;
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.team-role {
+  color: #F9F3D9;
+  font-size: 1rem;
 }
 
 
