@@ -48,3 +48,13 @@ window.addEventListener('load', function () {
     }, 600);
   }
 });
+
+// Auto-close mobile navbar when a nav link is clicked
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbar = document.getElementById('navbar');
+    if (navbar.classList.contains('active')) {
+      navbar.classList.remove('active');
+    }
+  });
+});
