@@ -437,31 +437,39 @@ footer p {
     display: none;
   }
 
-  .navbar.active {
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #114036;
-    padding: 1rem;
-  }
+.navbar.active {
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #114036;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  height: auto;
+  animation: slideDown 0.3s ease-in-out forwards;
+}
 
-  .navbar.active .nav-left,
-  .navbar.active .nav-right {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-  }
+.navbar.active .nav-left,
+.navbar.active .nav-right {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 0.5rem;
+}
 
-  .navbar.active .nav-left a,
-  .navbar.active .nav-right a {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-align: left;
-  }
+.navbar.active .nav-left a,
+.navbar.active .nav-right a {
+  display: block;
+  padding: 0.5rem 0;
+  text-align: left;
+  width: 100%;
+}
 
-  .navbar.active .nav-center {
-    display: none;
-  }
-
+.navbar.active .nav-center {
+  display: none;
+}
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
   .logo {
     height: 36px;
     max-width: 100px;
