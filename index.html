@@ -15,6 +15,7 @@
     footer { margin-top:1rem; font-size:.9rem; color:#555; }
   </style>
 </head>
+
 <body>
   <main class="card">
     <h1>Chat Widget Test Page</h1>
@@ -54,5 +55,21 @@
       console.log('Tried common chat open calls.');
     });
   </script>
+  
+  <script>
+  (function(d,t) {
+    var BASE_URL="http://0.0.0.0:3000";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: 'iPKh32RGrEBELKZP9LTrp2k4',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
+</script>
 </body>
 </html>
