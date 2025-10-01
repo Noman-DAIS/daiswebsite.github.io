@@ -1,274 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<script>
-(function(d,t) {
-  var BASE_URL="http://0.0.0.0:3000"; #http://dev-api.deployableai.ae:3000/
-  var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=BASE_URL+"/packs/js/sdk.js";
-  g.async = true;
-  s.parentNode.insertBefore(g,s);
-  g.onload=function(){
-    window.chatwootSDK.run({
-      websiteToken: 'JRp6bvsJZvb2UwVQ9BVTxEC4',
-      baseUrl: BASE_URL
-    })
-  }
-})(document,"script");
-</script>
 <head>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deployable AI</title>
-  <link rel="stylesheet" href="style.css" />
-  <script>
-      (function(d,t) {
-        var BASE_URL="http://dev-api.deployableai.ae:3000";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=BASE_URL+"/packs/js/sdk.js";
-        g.async = true;
-        s.parentNode.insertBefore(g,s);
-        g.onload=function(){
-          window.chatwootSDK.run({
-            websiteToken: 'ykfRznqhK2ZifQuxVyvDCddq',
-            baseUrl: BASE_URL
-          })
-        }
-      })(document,"script");
-  </script>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Widget Test</title>
+  <meta name="description" content="Minimal page to test a chat widget." />
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { display: grid; place-items: center; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:#f7f7f8; color:#111; }
+    .card { background:#fff; padding:2rem; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.06); max-width:640px; width:92%; text-align:center; }
+    .btn { display:inline-block; padding:.75rem 1rem; border-radius:10px; border:1px solid #ddd; background:#fff; cursor:pointer; font-weight:600; }
+    .btn:active { transform: translateY(1px); }
+    code { background:#f0f3f5; padding:.2rem .4rem; border-radius:6px; }
+    footer { margin-top:1rem; font-size:.9rem; color:#555; }
+  </style>
 </head>
-<body class="scroll-smooth">
+<body>
+  <main class="card">
+    <h1>Chat Widget Test Page</h1>
+    <p>This page exists only to load and poke at a chat widget.</p>
 
-  <div id="preloader">
-    <div class="preloader-glow">
-      <img src="logo.png" alt="Loading..." class="preloader-logo">
-    </div>
-  </div>
-  
-  <nav class="navbar" id="navbar">
-    <div class="nav-left">
-      <button class="hamburger" id="hamburger">☰</button>
-      <a href="#hero">Home</a>
-      <a href="#solutions">Solutions</a>
-    </div>
-    <div class="nav-center">
-      <img src="logo.png" alt="Logo" class="logo" />
-    </div>
-    <div class="nav-right">
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+    <!-- Optional: some widgets want an anchor element to render into. -->
+    <div id="chat-widget-anchor"></div>
 
-  <section id="hero" class="page page-1 fade-in">
-    <div class="container hero-center">
-      <h1 class="hero-title leather-text">D A I S</h1>
-      <h2 class="tagline">Your Enterprise A.I.</h2>
-      <p class="hero-subtext">
-        We simplify AI integration for businesses of all sizes, providing comprehensive training and support to enable smooth adoption.
-        We address high outsourcing costs, skill, and technology gap by offering high quality tailored A.I solutions.
-      </p>
-    </div>
-  </section>
-
-<section id="solutions" class="page page-2 fade-in">
-  <div class="container">
-    <h2 class="solutions-title">
-      <span style="color:#F9F3D9;">HOW</span>
-      <span style="color:#16AF8E;"> WE </span>
-      <span style="color:#F9F3D9;"> HELP </span>
-      <span style="color:#16AF8E;"> YOU </span>
-    </h2>
-    <div class="grid-solutions">
-      <div class="solution-item">
-        <div class="solution-icon">
-          <img src="icons/focus.svg" alt="Efficiency Icon" class="svg-icon" />
-        </div>
-        <div class="solution-text">
-          <h4>Increase Efficiency</h4>
-          <p>Focus on your core business activity. Let us manage the rest.</p>
-        </div>
-      </div>
-      <div class="solution-item">
-        <div class="solution-icon">
-          <img src="icons/reduce-costs.svg" alt="Reduce costs Icon" class="svg-icon" />
-        </div>
-        <div class="solution-text">
-          <h4>Reduce costs</h4>
-          <p>Leverage our Enterprise grade A.I. solutions into your business and benefit from cost reductions.</p>
-        </div>
-      </div>
-      <div class="solution-item">
-        <div class="solution-icon">
-          <img src="icons/no-code.svg" alt="No Code Icon" class="svg-icon" />
-        </div>
-        <div class="solution-text">
-          <h4>No Code</h4>
-          <p>You do not need any programming, IT, A.I, or related skills to use our services.</p>
-        </div>
-      </div>
-      <div class="solution-item">
-        <div class="solution-icon">
-          <img src="icons/quick-deployment.svg" alt="Quick Deployment Icon" class="svg-icon" />
-        </div>
-        <div class="solution-text">
-          <h4>Quick Deployment</h4>
-          <p>Our products can be deployed with zero hassle.</p>
-        </div>
-      </div>
-      <div class="solution-item">
-        <div class="solution-icon">
-          <img src="icons/client-support.svg" alt="Client Support Icon" class="svg-icon" />
-        </div>
-        <div class="solution-text">
-          <h4>Client Support</h4>
-          <p>In case of any issues or clarity, we are available 24/7.</p>
-        </div>
-      </div>
-      <div class="solution-item">
-        <div class="solution-icon">
-          <img src="icons/custom-ai.svg" alt="Custom AI Icon" class="svg-icon" />
-        </div>
-        <div class="solution-text">
-          <h4>Custom A.I solution</h4>
-          <p>Our specialized team can provide A.I solutions tailored to your needs.</p>
-        </div>
-      </div>
+    <div style="margin-top:1rem;">
+      <button class="btn" id="openChatBtn">Open Chat (try common APIs)</button>
     </div>
 
-    <div style="margin-top: 12rem;"></div>
+    <footer>
+      Paste your widget snippet just before <code>&lt;/body&gt;</code>. Push to GitHub Pages and you’re set.
+    </footer>
+  </main>
 
-    <h2 class="solutions-title">
-      <span style="color:#F9F3D9;">OUR</span>
-      <span style="color:#16AF8E;"> VERTICALS </span>
-    </h2>
+  <noscript>Enable JavaScript to load the chat widget.</noscript>
 
-    <div style="margin-top: 4rem;"></div>
+  <!-- 🔽🔽🔽 Paste your vendor's chat widget snippet below this line 🔽🔽🔽 -->
+  <!-- Example (do NOT keep this example; replace with your actual vendor snippet):
+  <script>
+    // vendor bootstrap…
+  </script>
+  -->
+  <!-- 🔼🔼🔼 Paste your vendor's chat widget snippet above this line 🔼🔼🔼 -->
 
-    <div class="grid-1x2" style="align-items: stretch; gap: 3rem;">
-      <div style="flex: 1;">
-        <h3 style="color:#F9B73F; font-size: 2rem; margin-bottom: 1rem;">Product - Souq Mate</h3>
-        <p style="font-size: 1.1rem; line-height: 1.7; color: #ccc;">
-          A.I driven chatbot deployed on any platform (WhatsApp, email, etc.) providing CRM solution. Your very own 24/7 sales manager.
-        </p>
-      </div>
-      <div style="flex: 1.2; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-        <img src="souqmate.png.jpg" alt="Souq Mate" style="width: 100%; height: auto; border-radius: 12px;" />
-      </div>
-    </div>
-
-    <div style="margin-top: 6rem;"></div>
-
-    <div class="grid-1x2" style="align-items: stretch; gap: 3rem;">
-      <div style="flex: 1;">
-        <h3 style="color:#F9B73F; font-size: 2rem; margin-bottom: 1rem;">Consultancy</h3>
-        <p style="font-size: 1.1rem; line-height: 1.7; color: #ccc;">
-          We provide a variety of services including ERP Integration, business process automation, and consultancy services to improve your business with A.I.
-        </p>
-      </div>
-      <div style="flex: 1.2; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-        <img src="product-bg.jpg" alt="Consultancy Services" style="width: 100%; height: auto; border-radius: 12px;" />
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-  <section id="about" class="page page-1 fade-in">
-    <div class="container">
-      <div class="grid-1x2">
-        <div>
-          <h2>
-            <span style="color:#F9F3D9;">Based</span> 
-            <span style="color:#F9F3D9;">in</span> 
-            <span style="color:#16AF8E;">Dubai</span>, 
-            <span style="color:#16AF8E;">UAE</span>
-          </h2>
-          <p>Our company is rooted in a city rapidly emerging as a global hub for technology and A.I. With smart city initiatives, advanced infrastructure, and strong government support for innovation, Dubai offers the ideal environment for tech-driven growth.</p>
-        </div>
-        <div><img src="dubai.jpg" alt="Dubai" style="width:100%; border-radius:12px;"></div>
-      </div>
-
-      <div style="height: 5rem;"></div>
-
-      <h2 style="text-align: center;">
-        <span style="color:#F9F3D9;">MEET</span> 
-        <span style="color:#F9F3D9;">OUR</span> 
-        <span style="color:#16AF8E;">TEAM</span>
-      </h2>
-
-      <div class="grid-3x2">
-        <div class="team-member">
-          <img src="mohammad-ceo.jpeg" alt="CEO" class="team-photo">
-          <p><span class="team-name">Mohammad Bin Ghelaita</span><br><span class="team-role">Founder and CEO</span></p>
-        </div>
-        
-        <div class="team-member">
-          <img src="massrawaeh.png" alt="CTO" class="team-photo">
-          <p><span class="team-name">Mohammad Massrawaeh</span><br><span class="team-role">Chief Technology Officer</span></p>
-        </div>
-        
-        <div class="team-member">
-          <img src="noman.jpeg" alt="COO" class="team-photo">
-          <p><span class="team-name">Noman Khan</span><br><span class="team-role">Chief Operating Officer</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section id="contact" class="page page-2 fade-in contact-outer">
-  <div class="contact-container">
-    
-    <!-- Section 1: Brain Icon -->
-    <div class="contact-section">
-      <img src="brainicon.svg" alt="Brain Icon" class="brain-icon" />
-    </div>
-    
-    <!-- Section 2: Heading -->
-    <div class="contact-section">
-      <h2 class="contact-title">Let’s Connect</h2>
-    </div>
-    
-    <!-- Section 3: Subtext -->
-    <div class="contact-section">
-      <p class="contact-subtext">We’d love to hear from you.</p>
-    </div>
-    
-    <!-- Section 4: Dual CTA in Mini Containers -->
-    <div class="contact-section contact-cta-row">
-      <div class="cta-container">
-        <a href="mailto:hello@deployableai.ae" class="cta-box">
-          <span class="cta-icon">✉️</span> Email Us
-        </a>
-      </div>
-      <div class="cta-container whatsapp">
-        <a href="https://wa.me/971555541120" class="cta-box">
-          <span class="cta-icon">💬</span> WhatsApp
-        </a>
-      </div>
-    </div>
-
-  
-  </div>
-</section>
-  <footer>
-    <div class="footer-left">
-      <img src="logo.png" class="logo">
-      <p>Deployable Artificial Intelligence Consultancies L.L.C</p>
-      <p><a href="legal.html" target="_blank">Legal Notice</a> | <a href="privacy.html" target="_blank">Privacy Policy</a></p>
-    </div>
-    <div class="footer-right">
-      <p>AL MARRAR, DEIRA, DUBAI, U.A.E<br/>+971501130503</p>
-      <p>mbinghelaita@deployableai.ae</p>
-     <!--  <div class="social-icons">
-        <a href="#"><img src="linkedin.svg"></a>
-        <a href="#"><img src="twitter.svg"></a>
-        <a href="#"><img src="instagram.svg"></a>
-      </div>-->
-    </div>
-  </footer>
+  <!-- Tiny helper to test a few common "open chat" APIs safely. Edit as needed. -->
+  <script>
+    document.getElementById('openChatBtn').addEventListener('click', function () {
+      try { window.Intercom && window.Intercom('show'); } catch(e) {}
+      try { window.$crisp && window.$crisp.push(["do", "chat:open"]); } catch(e) {}
+      try { window.fcWidget && window.fcWidget.open(); } catch(e) {}
+      try { window.Tawk_API && window.Tawk_API.maximize && window.Tawk_API.maximize(); } catch(e) {}
+      try { window.zE && window.zE('webWidget', 'open'); } catch(e) {}
+      // If your widget exposes a different API, add it here.
+      console.log('Tried common chat open calls.');
+    });
+  </script>
 </body>
 </html>
