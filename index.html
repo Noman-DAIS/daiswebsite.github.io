@@ -3,73 +3,69 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chat Widget Test</title>
-  <meta name="description" content="Minimal page to test a chat widget." />
+  <title>Chatwoot Widget Test</title>
+  <meta name="description" content="Minimal page to test a Chatwoot chat widget." />
   <style>
-    html, body { height: 100%; margin: 0; }
-    body { display: grid; place-items: center; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:#f7f7f8; color:#111; }
+    html, body { height:100%; margin:0; }
+    body { display:grid; place-items:center; font-family:system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background:#f7f7f8; color:#111; }
     .card { background:#fff; padding:2rem; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.06); max-width:640px; width:92%; text-align:center; }
     .btn { display:inline-block; padding:.75rem 1rem; border-radius:10px; border:1px solid #ddd; background:#fff; cursor:pointer; font-weight:600; }
     .btn:active { transform: translateY(1px); }
     code { background:#f0f3f5; padding:.2rem .4rem; border-radius:6px; }
-    footer { margin-top:1rem; font-size:.9rem; color:#555; }
   </style>
 </head>
-
 <body>
   <main class="card">
-    <h1>Chat Widget Test Page</h1>
-    <p>This page exists only to load and poke at a chat widget.</p>
-
-    <!-- Optional: some widgets want an anchor element to render into. -->
-    <div id="chat-widget-anchor"></div>
-
-    <div style="margin-top:1rem;">
-      <button class="btn" id="openChatBtn">Open Chat (try common APIs)</button>
-    </div>
-
-    <footer>
-      Paste your widget snippet just before <code>&lt;/body&gt;</code>. Push to GitHub Pages and you’re set.
-    </footer>
+    <h1>Chatwoot Widget Test</h1>
+    <p>Deploy this page to GitHub Pages, then click the button to open the widget.</p>
+    <button class="btn" id="openChatBtn">Open Chat</button>
+    <p style="margin-top:1rem; font-size:.9rem; color:#555">
+      Ensure <code>BASE_URL</code> below uses <strong>HTTPS</strong> and points to your public Chatwoot host.
+    </p>
   </main>
 
-  <noscript>Enable JavaScript to load the chat widget.</noscript>
+  <!-- Your Chatwoot snippet (HTTPS baseUrl required on GitHub Pages) -->
+  <script>
+    (function (d, t) {
+      // IMPORTANT: Replace with your public HTTPS Chatwoot host (examples):
+      //   https://chat.example.com   OR   https://your-chatwoot.onrender.com
+      var BASE_URL = "https://your-chatwoot-host.example.com"; // <-- change this
 
-  <!-- 🔽🔽🔽 Paste your vendor's chat widget snippet below this line 🔽🔽🔽 -->
-  <!-- Example (do NOT keep this example; replace with your actual vendor snippet):
-  <script>
-    // vendor bootstrap…
-  </script>
-  -->
-  <!-- 🔼🔼🔼 Paste your vendor's chat widget snippet above this line 🔼🔼🔼 -->
-
-  <!-- Tiny helper to test a few common "open chat" APIs safely. Edit as needed. -->
-  <script>
-    document.getElementById('openChatBtn').addEventListener('click', function () {
-      try { window.Intercom && window.Intercom('show'); } catch(e) {}
-      try { window.$crisp && window.$crisp.push(["do", "chat:open"]); } catch(e) {}
-      try { window.fcWidget && window.fcWidget.open(); } catch(e) {}
-      try { window.Tawk_API && window.Tawk_API.maximize && window.Tawk_API.maximize(); } catch(e) {}
-      try { window.zE && window.zE('webWidget', 'open'); } catch(e) {}
-      // If your widget exposes a different API, add it here.
-      console.log('Tried common chat open calls.');
-    });
-  </script>
-  
-  <script>
-    (function(d,t) {
-      var BASE_URL="http://0.0.0.0:3000";
-      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=BASE_URL+"/packs/js/sdk.js";
+      var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      g.src = BASE_URL + "/packs/js/sdk.js";
       g.async = true;
-      s.parentNode.insertBefore(g,s);
-      g.onload=function(){
+      s.parentNode.insertBefore(g, s);
+
+      g.onload = function () {
+        // Use your real websiteToken here:
         window.chatwootSDK.run({
-          websiteToken: 'iPKh32RGrEBELKZP9LTrp2k4',
+          websiteToken: "iPKh32RGrEBELKZP9LTrp2k4",   // <-- replace
           baseUrl: BASE_URL
-        })
+        });
+      };
+
+      g.onerror = function () {
+        console.error("Failed to load Chatwoot SDK from", g.src);
+      };
+    })(document, "script");
+  </script>
+
+  <!-- Helper: try common Chatwoot widget APIs -->
+  <script>
+    document.getElementById("openChatBtn").addEventListener("click", function () {
+      try {
+        // Most Chatwoot installs expose window.$chatwoot with open/toggle helpers
+        if (window.$chatwoot && typeof window.$chatwoot.open === "function") {
+          window.$chatwoot.open();
+        } else if (window.$chatwoot && typeof window.$chatwoot.toggle === "function") {
+          window.$chatwoot.toggle(); // fallback
+        } else {
+          console.log("Chatwoot API not ready yet.");
+        }
+      } catch (e) {
+        console.log("Could not call Chatwoot API:", e);
       }
-    })(document,"script");
+    });
   </script>
 </body>
 </html>
