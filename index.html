@@ -7,23 +7,31 @@
 </head>
 <body>
   <script>
-    (function(d, t) {
-      // Must be HTTPS when the page is served over GitHub Pages (HTTPS)
-      var BASE_URL = "https://dev-api.deployableai.ae"; // <- after you enable TLS
+    (function(d,t) {
+      var BASE_URL = "http://dev-api.deployableai.ae:3000"; // Chatwoot server URL
       var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
       g.src = BASE_URL + "/packs/js/sdk.js";
       g.async = true;
-      s.parentNode.insertBefore(g, s);
+      s.parentNode.insertBefore(g,s);
       g.onload = function() {
         window.chatwootSDK.run({
-          websiteToken: "ykfRznqhK2ZifQuxVyvDCddq",   // <- replace with real token
+          websiteToken: "YiQ9XDGpHV5roXkrBLJ14DXh",
           baseUrl: BASE_URL
+        });d
+ 
+        // Listen for new messages in the widget
+        window.addEventListener("chatwoot:on-message", async (e) => {
+          console.log("Widget Event Received:", e.detail);
+ 
+          // Forward to backend
+        //   await fetch("http://localhost:4000/chatwoot-ingest", {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(e.detail)
+        //   });
         });
       };
-      g.onerror = function () {
-        console.error("Failed to load Chatwoot SDK from", g.src);
-      };
-    })(document, "script");
+    })(document,"script");
   </script>
 </body>
 </html>
